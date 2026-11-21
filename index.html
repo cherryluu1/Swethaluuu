@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, Swethaluuu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Patrick+Hand&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#BFE3F5;--ink:#14325C;--paper:#FFFFFF;--red:#FF5E4D;--soft:#E3F3FB;--orange:#FFB627;--white:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1E3A;--ink:#BFE3F5;--paper:#F4FAFD;--soft:#14325C}}
+:root[data-theme="dark"]{--bg:#0C1E3A;--ink:#BFE3F5;--paper:#F4FAFD;--soft:#14325C}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:Quicksand,system-ui,sans-serif;font-size:18px;line-height:1.7;overflow-x:hidden}
+h1,h2{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.05}
+.hand{font-family:"Patrick Hand","Segoe Print",cursive}
+section{padding:80px 20px;max-width:1080px;margin:auto}
+.garland{height:40px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='40'%3E%3Cpath d='M0 3H160' stroke='%2314325C' stroke-width='2' fill='none'/%3E%3Cpath d='M4 4H36L20 36Z' fill='%23FF5E4D'/%3E%3Cpath d='M44 4H76L60 36Z' fill='%23FFB627'/%3E%3Cpath d='M84 4H116L100 36Z' fill='%23FFFFFF'/%3E%3Cpath d='M124 4H156L140 36Z' fill='%2314325C'/%3E%3C/svg%3E") 0 0/160px 40px repeat-x}
+.hero{background:radial-gradient(circle at 90% 12%,var(--orange) 0 clamp(40px,9vw,90px),transparent calc(clamp(40px,9vw,90px) + 1px));min-height:92vh;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.hero .hand{font-size:clamp(24px,4vw,34px);color:var(--red)}
+.hero h1{font-size:clamp(54px,15vw,170px);margin:10px 0}
+.hero p{max-width:560px;margin:10px auto 28px}
+.btn{font:700 17px Quicksand,sans-serif;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:14px 30px;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:scale(1.05)}.btn:focus-visible,.pol:focus-visible,.tap:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h2{font-size:clamp(34px,6vw,60px);margin-bottom:14px}
+.lead{max-width:600px;margin-bottom:36px}
+/* journey */
+.stage{text-align:center;padding:50px 20px}
+.steps{display:flex;flex-direction:column;align-items:center;gap:6px;min-height:280px;justify-content:center}
+.s{opacity:0;transform:translateY(14px);transition:.7s;font-family:"DM Serif Display",serif}
+.s.on{opacity:1;transform:none}
+.s1{font-size:clamp(24px,4vw,36px);opacity:.55}.s1.on{opacity:.55}
+.s2{font-size:clamp(40px,8vw,76px)}
+.s3{font-size:clamp(52px,13vw,140px);color:var(--red)}
+.arrow{font-size:28px;opacity:0;transition:.6s}.arrow.on{opacity:1}
+.note{max-width:520px;margin:8px auto 28px;min-height:56px}
+/* wall */
+.wall{columns:3 240px;column-gap:26px}
+.pol{break-inside:avoid;display:block;width:100%;background:var(--paper);padding:10px 10px 6px;margin:0 0 30px;border:0;border-radius:18px;box-shadow:0 10px 26px rgba(20,50,92,.25);cursor:zoom-in;position:relative;text-align:center;color:#14325C}
+.pol:nth-child(odd){transform:rotate(-2.2deg)}.pol:nth-child(even){transform:rotate(1.8deg)}.pol:nth-child(3n){transform:rotate(-.6deg)}
+.pol:before{content:"";position:absolute;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;background:var(--red);border-radius:50%;box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.pol img{width:100%;height:auto;display:block;border-radius:11px}
+.pol .hand{display:block;font-size:23px;padding:8px 2px 2px;line-height:1.2}
+#lb{position:fixed;inset:0;background:rgba(10,24,46,.93);display:none;align-items:center;justify-content:center;flex-direction:column;z-index:50;padding:20px;cursor:zoom-out}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:78vh;border:10px solid var(--paper);border-radius:3px}
+#lb p{color:#FFD65C;font-size:30px;margin-top:14px;text-align:center}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.tap{background:var(--soft);border:2px dashed var(--ink);border-radius:18px;padding:26px;min-height:170px;text-align:left;cursor:pointer;color:var(--ink);font:inherit}
+.tap b{font-family:"DM Serif Display",serif;font-weight:400;font-size:28px;display:block}
+.tap span{display:none;margin-top:8px}.tap.open span{display:block}.tap.open{background:var(--ink);color:var(--bg);border-style:solid}
+.tap i{font-style:normal;opacity:.6;font-size:15px}.tap.open i{display:none}
+/* letter */
+.letter{background:var(--paper);color:#1b2c48;padding:46px clamp(22px,5vw,60px);max-width:680px;margin:auto;border-radius:14px;border-left:4px solid var(--red);box-shadow:0 18px 50px rgba(20,50,92,.25);background-image:repeating-linear-gradient(transparent 0 33px,rgba(20,50,92,.14) 33px 34px);line-height:34px}
+.letter h2{color:var(--red);line-height:1.1}.letter p{margin:0 0 34px}.sign{font-size:34px;color:var(--ink);text-align:right}
+/* cake */
+.cake{text-align:center}
+.cakewrap{position:relative;width:260px;height:200px;margin:40px auto 26px}
+.cakewrap div{position:absolute}
+.l1{bottom:0;left:0;width:260px;height:80px;background:var(--red);border-radius:16px}
+.l2{bottom:80px;left:30px;width:200px;height:62px;background:var(--orange);border-radius:14px 14px 6px 6px}
+.ic{bottom:132px;left:26px;width:208px;height:18px;background:#FFF;border-radius:12px}
+.cd{bottom:148px;width:12px;height:42px;background:#FFF;border-radius:4px;border:2px solid var(--ink)}
+.cd:before{content:"";position:absolute;left:0;top:-22px;width:8px;height:18px;background:#FFC83D;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;box-shadow:0 0 14px #FFC83D;animation:fl .5s infinite alternate}
+.cd.off:before{display:none}@keyframes fl{to{transform:scaleY(1.2) rotate(4deg)}}
+.cd:nth-of-type(1){left:50px}.cd:nth-of-type(2){left:90px}.cd:nth-of-type(3){left:124px}.cd:nth-of-type(4){left:160px}.cd:nth-of-type(5){left:196px}
+.final{text-align:center;padding-bottom:110px}.final h2{font-size:clamp(46px,11vw,130px);color:var(--red)}
+.bit{position:fixed;width:9px;height:15px;z-index:60;pointer-events:none;animation:bit 1.9s ease-out forwards}
+@keyframes bit{to{transform:translate(var(--x),var(--y)) rotate(720deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="garland"></div>
+<section class="hero">
+<div class="hand">a little album for my favourite akka</div>
+<h1>Happy Birthday, Swethaluuu!</h1>
+<p>You started as Mom’s friend. Somewhere along the way you became family. I made you a small corner of the internet to say thank you.</p>
+<div><button class="btn" onclick="document.getElementById('story').scrollIntoView()">Open your album</button></div>
+</section>
+
+<section id="story" class="stage">
+<h2>How it happened</h2>
+<div class="steps">
+<div class="s s1" id="a">Mom’s friend</div><div class="arrow" id="ar1">↓</div>
+<div class="s s2" id="b">Akka</div><div class="arrow" id="ar2">↓</div>
+<div class="s s3" id="c">Swethaluuu</div>
+</div>
+<p class="note" id="note">Tap the button. I’ll show you how it went.</p>
+<button class="btn" id="go" onclick="next()">Start from the beginning</button>
+</section>
+
+<section>
+<h2>Our photo wall</h2>
+<p class="lead">Every picture is taped on in no particular order, because that is how the best memories turn up. Tap any photo to see it bigger.</p>
+<div class="wall">
+<button class="pol" onclick="openPhoto(this)"><img width="899" height="1599" src="images/1.jpeg" alt="Photo 1"><span class="hand">Just a normal day, but a good one</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="900" height="1600" src="images/2.jpeg" alt="Photo 2"><span class="hand">Caught in the act</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="576" height="1280" src="images/3.jpeg" alt="Photo 3"><span class="hand">Pure happiness</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="717" height="1600" src="images/4.jpeg" alt="Photo 4"><span class="hand">Dressed up and ready</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="853" height="1280" src="images/5.jpeg" alt="Photo 5"><span class="hand">This one makes me smile every time</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="576" height="1280" src="images/6.jpeg" alt="Photo 6"><span class="hand">Peak Swethaluuu energy</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="1080" height="1920" src="images/7.jpeg" alt="Photo 7"><span class="hand">A memory worth keeping</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="899" height="1599" src="images/8.jpeg" alt="Photo 8"><span class="hand">The pout, as promised</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="899" height="1599" src="images/9.jpeg" alt="Photo 9"><span class="hand">Photo taken, no warning given</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="1080" height="1920" src="images/10.jpeg" alt="Photo 10"><span class="hand">Family is the best part</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="1080" height="1920" src="images/11.jpeg" alt="Photo 11"><span class="hand">Smiling like it’s nothing</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="766" height="1599" src="images/12.jpeg" alt="Photo 12"><span class="hand">One of my favourites</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="1200" height="1600" src="images/13.jpeg" alt="Photo 13"><span class="hand">Simple moments, big feelings</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="576" height="1280" src="images/14.jpeg" alt="Photo 14"><span class="hand">Posing like a pro</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="1200" height="1600" src="images/15.jpeg" alt="Photo 15"><span class="hand">Best company, always</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="899" height="1599" src="images/16.jpeg" alt="Photo 16"><span class="hand">Frame this one</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="1080" height="1920" src="images/17.jpeg" alt="Photo 17"><span class="hand">Too cute to delete</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="1200" height="1599" src="images/18.jpeg" alt="Photo 18"><span class="hand">Never a boring moment</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="1280" height="853" src="images/19.jpeg" alt="Photo 19"><span class="hand">Still smiling</span></button>
+<button class="pol" onclick="openPhoto(this)"><img width="960" height="1280" src="images/20.jpeg" alt="Photo 20"><span class="hand">Another page in our story</span></button>
+
+</div>
+</section>
+
+<section>
+<h2>Four things I know about you</h2>
+<p class="lead">Tap each card.</p>
+<div class="cards">
+<button class="tap" onclick="this.classList.toggle('open')"><b>Your smile</b><i>tap</i><span>It shows up in almost every photo above, and it never looks forced.</span></button>
+<button class="tap" onclick="this.classList.toggle('open')"><b>Your laugh</b><i>tap</i><span>Loud, free, and impossible to hear without joining in.</span></button>
+<button class="tap" onclick="this.classList.toggle('open')"><b>Your pout</b><i>tap</i><span>Dramatic. Very effective. Absolutely adorable. I will not be taking questions.</span></button>
+<button class="tap" onclick="this.classList.toggle('open')"><b>Your care</b><i>tap</i><span>You make people feel looked after without making a big deal of it.</span></button>
+</div>
+</section>
+
+<section>
+<div class="letter">
+<h2>Dear Swethaluuu,</h2>
+<p>At first you were just Mom’s friend, the colleague whose name came up at home now and then.</p>
+<p>Then you became Akka, and I got someone to ask for advice, someone to tease and someone to take my side.</p>
+<p>Now you are simply my Swethaluuu, and it feels like you were always part of this family.</p>
+<p>Thank you for every laugh, every photo and every ordinary day that became a good one because you were in it.</p>
+<p>Happy birthday. I hope this year is as kind to you as you are to everyone else.</p>
+<div class="sign hand">With all my love 💛</div>
+</div>
+</section>
+
+<section class="cake">
+<h2>Make a wish, Akka</h2>
+<p class="lead" style="margin:auto">Five candles, because the cake has limited space.</p>
+<div class="cakewrap"><div class="cd"></div><div class="cd"></div><div class="cd"></div><div class="cd"></div><div class="cd"></div><div class="ic"></div><div class="l2"></div><div class="l1"></div></div>
+<button class="btn" onclick="blow()">Blow them out</button>
+<p id="wish" class="hand" style="font-size:30px;margin-top:20px;min-height:44px"></p>
+</section>
+
+<section class="final">
+<div class="hand" style="font-size:30px;color:var(--red)">one more time</div>
+<h2>Happy Birthday, Swethaluuu!</h2>
+<p>Thank you for being my sister in every way that counts.</p>
+</section>
+<div class="garland"></div>
+
+<div id="lb" onclick="this.classList.remove('on')"><img id="lbi" alt=""><p class="hand" id="lbc"></p></div>
+
+<script>
+var st=0;
+var notes=["Back then, I only knew you as the friend Mom talked about.","Then one day, you were simply Akka. No announcement, it just happened.","And now you’re my Swethaluuu. Nothing else fits better."];
+function next(){
+ var ids=["a","b","c"];
+ if(st<3){document.getElementById(ids[st]).classList.add("on");if(st>0)document.getElementById("ar"+st).classList.add("on");document.getElementById("note").textContent=notes[st];st++;
+  if(st===3){confetti();document.getElementById("go").textContent="Read it again";}
+  else document.getElementById("go").textContent=st===1?"And then?":"And now?";
+ }else{ids.forEach(function(i){document.getElementById(i).classList.remove("on")});document.getElementById("ar1").classList.remove("on");document.getElementById("ar2").classList.remove("on");st=0;document.getElementById("note").textContent="";document.getElementById("go").textContent="Start from the beginning";}
+}
+function openPhoto(b){var i=b.querySelector("img");document.getElementById("lbi").src=i.src;document.getElementById("lbc").textContent=b.querySelector(".hand").textContent;document.getElementById("lb").classList.add("on")}
+function blow(){var c=document.querySelectorAll(".cd");c.forEach(function(x,i){setTimeout(function(){x.classList.add("off")},i*160)});document.getElementById("wish").textContent="May everything you quietly wished for find its way to you.";confetti()}
+function confetti(){var col=["#FF5E4D","#FFB627","#14325C","#7FC8EE","#FFFFFF"];for(var i=0;i<70;i++){var d=document.createElement("div");d.className="bit";d.style.left="50%";d.style.top="45%";d.style.background=col[i%5];d.style.setProperty("--x",(Math.random()-.5)*innerWidth+"px");d.style.setProperty("--y",(Math.random()-.4)*innerHeight+"px");document.body.appendChild(d);setTimeout(function(e){e.remove()},2000,d)}}
+</script>
+</body>
+</html>
